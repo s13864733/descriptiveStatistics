@@ -1,6 +1,6 @@
 import pygame
-from settings import GAME_WIDTH, GAME_HEIGHT
-from settings import BLUE
+from settings import GAME_WIDTH, GAME_HEIGHT, BLUE, BLACK
+
 class Player(pygame.sprite.Sprite):
     def __init__(self, x, y, name, money):
         pygame.sprite.Sprite.__init__(self)
@@ -33,4 +33,4 @@ class Player(pygame.sprite.Sprite):
         pygame.draw.rect(screen, BLUE, self.rect)
     
     def drawDebug(self, screen):
-        screen.blit(pygame.font.SysFont("Arial", 12).render(f"{self.pos} ${self.rect}", True, (0, 0, 0)), (self.pos.x - 25, self.pos.y - 25))
+        screen.blit(pygame.font.SysFont("Arial", 12).render(f"{self.pos} ${self.rect}", True, BLACK), (self.pos.x - 25, self.pos.y - 25))
